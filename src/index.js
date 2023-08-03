@@ -1,7 +1,7 @@
-import { Notify } from 'notiflix';
 import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import Notiflix from 'notiflix';
 
 async function fetchPhotos(searchQuery, page) {
   const apiKey = '38622369-5233b95d6674dc08f7eab892f';
@@ -57,7 +57,11 @@ searchForm.addEventListener('submit', async (event) => {
     if (data.hits.length === 0) {
       gallery.innerHTML = '';
       loadMoreBtn.style.display = 'none';
-      throw new Error('Извините, но нет изображений ¯\_(ツ)_/¯, соответствующих вашему запросу. Пожалуйста, попробуйте еще раз.');
+      Notiflix.Notify.failure('Извините, но нет изображений ¯\\_(ツ)_/¯, соответствующих вашему запросу. Пожалуйста, попробуйте еще раз.', {
+        timeout: 3000,
+        position: 'center-bottom',
+      });
+      return;
     }
 
     const galleryMarkup = generateGalleryMarkup(data.hits);
@@ -72,6 +76,10 @@ searchForm.addEventListener('submit', async (event) => {
 
   } catch (error) {
     console.error(error);
+    Notiflix.Notify.failure('Не удалось загрузить изображения', {
+      timeout: 3000,
+      position: 'center-bottom',
+    });
   }
 });
 
