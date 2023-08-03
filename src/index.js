@@ -78,7 +78,7 @@ async function loadMorePhotos() {
 
     if (data.hits.length === 0 || currentPage > Math.ceil(data.totalHits / perPage)) {
       loadMoreBtn.style.display = 'none';
-      Notiflix.Notify.info("Сожалеем, но вы достигли конца результатов поиска.", {
+      Notiflix.Notify.info("Сожалеем, но больше найти изобрадения по вашему запросу не можем.", {
         timeout: 3000,
         position: 'center-center',
       });
