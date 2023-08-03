@@ -32,7 +32,7 @@ function generateGalleryMarkup(hits) {
         <div class="info">
           <p class="info-item"><b>Лайков:</b> ${hit.likes}</p>
           <p class="info-item"><b>Просмотров:</b> ${hit.views}</p>
-          <p class="info-item"><b>Комментарие:</b> ${hit.comments}</p>
+          <p class="info-item"><b>Комментариев:</b> ${hit.comments}</p>
           <p class="info-item"><b>Загрузок:</b> ${hit.downloads}</p>
         </div>
       </div>
