@@ -59,7 +59,7 @@ searchForm.addEventListener('submit', async (event) => {
       loadMoreBtn.style.display = 'none';
       Notiflix.Notify.failure('Извините, но нет изображений ¯\\_(ツ)_/¯, соответствующих вашему запросу. Пожалуйста, попробуйте еще раз.', {
         timeout: 3000,
-        position: 'center-bottom',
+        position: 'center-center',
       });
       return;
     }
